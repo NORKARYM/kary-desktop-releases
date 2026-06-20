@@ -1,15 +1,25 @@
 # KÄRŸ Desktop — Releases
 
-Binaris **descarregables** del launcher **KÄRŸ Desktop** (Windows · macOS · Linux).
+Binaris **descarregables** de l'ecosistema **KÄRŸ Desktop** (Windows · macOS · Linux).
 
-Aquest repositori és **públic a propòsit**: només conté els artefactes de release
+Aquest repositori és **públic a propòsit**: només conté artefactes de release
 (instal·ladors i bundles), perquè qualsevol usuari els pugui descarregar **sense
-autenticar-se a GitHub**. El **codi font viu al repo privat** `NORKARYM/KARY-LAUNCHER`
-i es publica aquí **automàticament** des del seu workflow de release.
+autenticar-se a GitHub**. El **codi font viu als repos privats** corresponents i es
+publica aquí **automàticament** des dels seus workflows de release.
+
+## Aplicacions i convenció de tags
+
+Cada app publica amb un **prefix de tag** propi (per no xocar al repo compartit):
+
+| App | Repo privat (codi) | Tag del release públic |
+|-----|--------------------|-------------------------|
+| **KÄRŸ Desktop** (launcher) | `NORKARYM/KARY-LAUNCHER` | `kary-desktop-v*` |
+| **BITXOS** | `NORKARYM/BITXOS` | `bitxos-v*` |
+| **GENOAI** | `NORKARYM/GENOAI` | `genoai-v*` |
 
 ## Descarregar
 
-Vés a **[Releases](../../releases)** i baixa l'artefacte del teu sistema:
+Vés a **[Releases](../../releases)** i busca el teu sistema:
 
 | Sistema | Artefacte |
 |--------|-----------|
@@ -17,17 +27,17 @@ Vés a **[Releases](../../releases)** i baixa l'artefacte del teu sistema:
 | macOS (Apple Silicon / Intel) | `.dmg` |
 | Linux | `.AppImage` |
 
-> Els builds estan **sense firma** de moment (Authenticode / notarització Apple
-> arribaran amb els certificats). El SO pot avisar en obrir-los el primer cop.
+> Builds **sense firma** de moment (Authenticode / notarització Apple arribaran amb els
+> certificats). El SO pot avisar en obrir-los el primer cop.
 
 ## Verificar la baixada
 
-El propi launcher verifica el **sha256** de tot el que instal·la abans d'executar-ho.
+El launcher verifica el **sha256** de tot el que instal·la abans d'executar-ho.
 
 ## Com es publica
 
-El workflow `Release KÄRŸ Desktop` del repo privat construeix als 3 SO i fa un
-**mirall** dels bundles cap aquí (job `publish`). No cal tocar res manualment.
+El workflow de release de cada repo privat construeix i fa un **mirall** dels bundles cap
+aquí. Només cal el secret `RELEASES_TOKEN` (millor com a secret d'org de NORKARYM).
 
 ---
 
